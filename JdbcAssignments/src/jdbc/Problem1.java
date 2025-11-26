@@ -25,12 +25,11 @@ public static void main(String[] args) throws Exception {
 		
 		// 3. create statement
 		Statement st = con.createStatement();
-		String query = "select * from employees";
-		//4. Execute and Processing results
+		String query = "select * from employees where department = 'IT' AND salary < 60000";		//4. Execute and Processing results
 		ResultSet rs = st.executeQuery(query);
 		
 		while(rs.next()) {
-			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(4));
+			System.out.println(rs.getString(2)+" "+rs.getString(4));
 		}
 		
 		con.close();
